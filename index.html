@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generative Typography - 산</title>
-    <link rel="stylesheet" href="./src/style.css">
+  <meta charset="UTF-8">
+  <title>있는 그대로</title>
+  <link rel="stylesheet" href="src/style.css">
 </head>
-<body>
-    <div id="typography-container">
-        <span class="char" id="char-1">ㅅ</span>
-        <span class="char" id="char-2">ㅏ</span>
-        <span class="char" id="char-3">ㄴ</span>
-    </div>
-    <script src="./src/script.js"></script>
+<body class="home">
+
+  <div class="home-box">
+    <h1>있는 그대로</h1>
+    <p>있는 그대로 본다는 것은 대상을 동태로 본다는 것.대상이 시간성을 가진다는 것은 자성이 없는 대상들이 서로 의존하면서 관계를 맺고 하나가 변화하면 모든 것이 변화하기 때문에 우리는 모두 변화하고 변화한다.</p>
+
+    <input id="input-word" type="text" placeholder="예: 산은 산이요 물은 물이로다">
+
+    <button id="btn-go">타이포 생성하기</button>
+  </div>
+
+  <script>
+    document.getElementById("btn-go").onclick = () => {
+      const word = document.getElementById("input-word").value.trim();
+      if (!word) return;
+      localStorage.setItem("typoWord", word);
+      window.location.href = "stage.html";
+    };
+  </script>
+
 </body>
 </html>
